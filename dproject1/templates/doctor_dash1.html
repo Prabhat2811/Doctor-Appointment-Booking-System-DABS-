@@ -1,0 +1,53 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment System</title>
+    <link rel="stylesheet" href="{% static 'admin_dash.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="doc_page">
+            <img src="{% static 'logo.ico' %}" alt="admin_page.html" id="logo1"></a><br>
+            <h1 id="black1">----</h1>
+            <h1>Get Cured</h1>
+            <nav>
+                <ul>
+                    <li><a href="home1">Home</a></li>
+                    <li><a href="About">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="doctor_login">SIGNOUT</a></li>
+                    
+                   
+                </ul>
+                
+               
+            
+            </nav>
+        </div>
+    </header>
+    <center>
+        <div class="tab">
+        <table border = solid  >
+            <tr>
+                <td>Doctor Name</td>
+                <td>Email</td>
+                <td>Password</td>
+            </tr>
+        </div>
+           {% for n in d %}
+            <tr>
+                <td>{{n.doctor_name}}</td>
+                <td>{{n.email}}</td>
+                <td>{{n.pwd}}</td>
+                <td><a href="delete/{{n.id}}">Delete</a>
+              </tr>
+           {% endfor %}
+        </table>
+    </center>
+    </body>
+    </html>
